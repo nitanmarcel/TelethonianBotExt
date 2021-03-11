@@ -79,7 +79,7 @@ async def init(bot: TelegramClient):
                         f"[{sender.first_name}](tg://user?id={sender.id}) reported a [message](t.me/{chat.username}/{reply_message.id}) in [{chat.title}](t.me/{chat.username})",
                     )
                 except (UserIsBlockedError, ValueError):
-                    pass
+                    continue
         await reply_message.reply(
             f"[{sender.first_name}](tg://user?id={sender.id}) reported this message to admins"
         )
